@@ -46,7 +46,6 @@ namespace BanjakCarrascalTimingSystemFinal
             this.cmb_stage = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.dt_timestart = new System.Windows.Forms.DateTimePicker();
             this.btn_confirm = new System.Windows.Forms.Button();
             this.btn_updateconfirm = new System.Windows.Forms.Button();
             this.panel_1 = new System.Windows.Forms.Panel();
@@ -55,6 +54,7 @@ namespace BanjakCarrascalTimingSystemFinal
             this.txt_date = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel_2 = new System.Windows.Forms.Panel();
+            this.txt_timestart = new System.Windows.Forms.MaskedTextBox();
             this.txt_plate = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btn_search = new System.Windows.Forms.Button();
@@ -118,6 +118,7 @@ namespace BanjakCarrascalTimingSystemFinal
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(382, 229);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(528, 338);
             this.dataGridView1.TabIndex = 9;
@@ -236,15 +237,6 @@ namespace BanjakCarrascalTimingSystemFinal
             this.label8.TabIndex = 47;
             this.label8.Text = "Time Start";
             // 
-            // dt_timestart
-            // 
-            this.dt_timestart.CustomFormat = "hh:mm:ss tt";
-            this.dt_timestart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dt_timestart.Location = new System.Drawing.Point(19, 140);
-            this.dt_timestart.Name = "dt_timestart";
-            this.dt_timestart.Size = new System.Drawing.Size(326, 20);
-            this.dt_timestart.TabIndex = 2;
-            // 
             // btn_confirm
             // 
             this.btn_confirm.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -326,17 +318,25 @@ namespace BanjakCarrascalTimingSystemFinal
             // panel_2
             // 
             this.panel_2.BackColor = System.Drawing.Color.SandyBrown;
+            this.panel_2.Controls.Add(this.txt_timestart);
             this.panel_2.Controls.Add(this.txt_plate);
             this.panel_2.Controls.Add(this.label10);
             this.panel_2.Controls.Add(this.txt_racername);
             this.panel_2.Controls.Add(this.label1);
-            this.panel_2.Controls.Add(this.dt_timestart);
             this.panel_2.Controls.Add(this.label8);
             this.panel_2.Enabled = false;
             this.panel_2.Location = new System.Drawing.Point(12, 274);
             this.panel_2.Name = "panel_2";
             this.panel_2.Size = new System.Drawing.Size(364, 182);
             this.panel_2.TabIndex = 51;
+            // 
+            // txt_timestart
+            // 
+            this.txt_timestart.Location = new System.Drawing.Point(16, 139);
+            this.txt_timestart.Mask = "00:00:00.000";
+            this.txt_timestart.Name = "txt_timestart";
+            this.txt_timestart.Size = new System.Drawing.Size(329, 20);
+            this.txt_timestart.TabIndex = 90;
             // 
             // txt_plate
             // 
@@ -497,7 +497,6 @@ namespace BanjakCarrascalTimingSystemFinal
         private System.Windows.Forms.ComboBox cmb_stage;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker dt_timestart;
         private System.Windows.Forms.Button btn_confirm;
         private System.Windows.Forms.Button btn_updateconfirm;
         private System.Windows.Forms.Panel panel_1;
@@ -515,5 +514,6 @@ namespace BanjakCarrascalTimingSystemFinal
         private System.Windows.Forms.TextBox txt_plate;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btn_print;
+        private System.Windows.Forms.MaskedTextBox txt_timestart;
     }
 }

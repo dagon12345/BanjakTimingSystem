@@ -44,7 +44,11 @@ namespace BanjakCarrascalTimingSystemFinal
             this.txt_date = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel_2 = new System.Windows.Forms.Panel();
-            this.txttime = new System.Windows.Forms.MaskedTextBox();
+            this.txt_finished = new System.Windows.Forms.MaskedTextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txt_timestart = new System.Windows.Forms.MaskedTextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtoveralltime = new System.Windows.Forms.MaskedTextBox();
             this.lbl_data3 = new System.Windows.Forms.Label();
             this.txt_plate = new System.Windows.Forms.Label();
             this.lbl_data2 = new System.Windows.Forms.Label();
@@ -79,10 +83,10 @@ namespace BanjakCarrascalTimingSystemFinal
             // 
             this.btn_clear.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_clear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_clear.Location = new System.Drawing.Point(19, 158);
+            this.btn_clear.Location = new System.Drawing.Point(17, 245);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(79, 28);
-            this.btn_clear.TabIndex = 61;
+            this.btn_clear.TabIndex = 5;
             this.btn_clear.Text = "Clear";
             this.btn_clear.UseVisualStyleBackColor = true;
             this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
@@ -91,10 +95,10 @@ namespace BanjakCarrascalTimingSystemFinal
             // 
             this.btn_update.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_update.Location = new System.Drawing.Point(104, 229);
+            this.btn_update.Location = new System.Drawing.Point(108, 278);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(82, 29);
-            this.btn_update.TabIndex = 59;
+            this.btn_update.TabIndex = 3;
             this.btn_update.Text = "UPDATE";
             this.btn_update.UseVisualStyleBackColor = true;
             this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
@@ -103,10 +107,10 @@ namespace BanjakCarrascalTimingSystemFinal
             // 
             this.btn_delete.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_delete.Location = new System.Drawing.Point(192, 229);
+            this.btn_delete.Location = new System.Drawing.Point(196, 278);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(82, 28);
-            this.btn_delete.TabIndex = 60;
+            this.btn_delete.TabIndex = 4;
             this.btn_delete.Text = "DELETE";
             this.btn_delete.UseVisualStyleBackColor = true;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
@@ -115,10 +119,10 @@ namespace BanjakCarrascalTimingSystemFinal
             // 
             this.btn_save.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_save.Location = new System.Drawing.Point(16, 228);
+            this.btn_save.Location = new System.Drawing.Point(20, 277);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(82, 28);
-            this.btn_save.TabIndex = 58;
+            this.btn_save.TabIndex = 2;
             this.btn_save.Text = "SAVE";
             this.btn_save.UseVisualStyleBackColor = true;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
@@ -136,7 +140,7 @@ namespace BanjakCarrascalTimingSystemFinal
             this.panel_1.Controls.Add(this.label8);
             this.panel_1.Location = new System.Drawing.Point(12, 8);
             this.panel_1.Name = "panel_1";
-            this.panel_1.Size = new System.Drawing.Size(339, 224);
+            this.panel_1.Size = new System.Drawing.Size(339, 276);
             this.panel_1.TabIndex = 65;
             // 
             // cmb_stage
@@ -218,7 +222,11 @@ namespace BanjakCarrascalTimingSystemFinal
             // panel_2
             // 
             this.panel_2.BackColor = System.Drawing.Color.SandyBrown;
-            this.panel_2.Controls.Add(this.txttime);
+            this.panel_2.Controls.Add(this.txt_finished);
+            this.panel_2.Controls.Add(this.label13);
+            this.panel_2.Controls.Add(this.txt_timestart);
+            this.panel_2.Controls.Add(this.label12);
+            this.panel_2.Controls.Add(this.txtoveralltime);
             this.panel_2.Controls.Add(this.lbl_data3);
             this.panel_2.Controls.Add(this.txt_plate);
             this.panel_2.Controls.Add(this.lbl_data2);
@@ -240,17 +248,59 @@ namespace BanjakCarrascalTimingSystemFinal
             this.panel_2.Enabled = false;
             this.panel_2.Location = new System.Drawing.Point(357, 8);
             this.panel_2.Name = "panel_2";
-            this.panel_2.Size = new System.Drawing.Size(704, 271);
+            this.panel_2.Size = new System.Drawing.Size(704, 310);
             this.panel_2.TabIndex = 52;
             // 
-            // txttime
+            // txt_finished
             // 
-            this.txttime.Location = new System.Drawing.Point(18, 132);
-            this.txttime.Mask = "00:00:00.000";
-            this.txttime.Name = "txttime";
-            this.txttime.Size = new System.Drawing.Size(216, 20);
-            this.txttime.TabIndex = 87;
-            this.txttime.ValidatingType = typeof(System.DateTime);
+            this.txt_finished.Location = new System.Drawing.Point(17, 172);
+            this.txt_finished.Mask = "00:00:00.000";
+            this.txt_finished.Name = "txt_finished";
+            this.txt_finished.Size = new System.Drawing.Size(216, 20);
+            this.txt_finished.TabIndex = 1;
+            this.txt_finished.ValidatingType = typeof(System.DateTime);
+            this.txt_finished.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txt_finished_MaskInputRejected);
+            this.txt_finished.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_finished_KeyUp);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(14, 153);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(303, 16);
+            this.label13.TabIndex = 90;
+            this.label13.Text = "Time Finished(Hours:Minutes.Seconds.Milliseconds)";
+            // 
+            // txt_timestart
+            // 
+            this.txt_timestart.Location = new System.Drawing.Point(17, 130);
+            this.txt_timestart.Mask = "00:00:00.000";
+            this.txt_timestart.Name = "txt_timestart";
+            this.txt_timestart.ReadOnly = true;
+            this.txt_timestart.Size = new System.Drawing.Size(216, 20);
+            this.txt_timestart.TabIndex = 0;
+            this.txt_timestart.ValidatingType = typeof(System.DateTime);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(15, 108);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(280, 16);
+            this.label12.TabIndex = 88;
+            this.label12.Text = "Time Start(Hours:Minutes.Seconds.Milliseconds)";
+            // 
+            // txtoveralltime
+            // 
+            this.txtoveralltime.Location = new System.Drawing.Point(17, 217);
+            this.txtoveralltime.Mask = "00:00:00.000";
+            this.txtoveralltime.Name = "txtoveralltime";
+            this.txtoveralltime.ReadOnly = true;
+            this.txtoveralltime.Size = new System.Drawing.Size(216, 20);
+            this.txtoveralltime.TabIndex = 87;
+            this.txtoveralltime.ValidatingType = typeof(System.DateTime);
             // 
             // lbl_data3
             // 
@@ -407,17 +457,17 @@ namespace BanjakCarrascalTimingSystemFinal
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(16, 110);
+            this.label4.Location = new System.Drawing.Point(15, 195);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(253, 16);
+            this.label4.Size = new System.Drawing.Size(299, 16);
             this.label4.TabIndex = 47;
-            this.label4.Text = "Time(Hours:Minutes.Seconds.Milliseconds)";
+            this.label4.Text = "Overall Time(Hours:Minutes.Seconds.Milliseconds)";
             // 
             // btn_updateconfirm
             // 
             this.btn_updateconfirm.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_updateconfirm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_updateconfirm.Location = new System.Drawing.Point(99, 238);
+            this.btn_updateconfirm.Location = new System.Drawing.Point(98, 290);
             this.btn_updateconfirm.Name = "btn_updateconfirm";
             this.btn_updateconfirm.Size = new System.Drawing.Size(82, 28);
             this.btn_updateconfirm.TabIndex = 67;
@@ -429,7 +479,7 @@ namespace BanjakCarrascalTimingSystemFinal
             // 
             this.btn_confirm.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_confirm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_confirm.Location = new System.Drawing.Point(11, 238);
+            this.btn_confirm.Location = new System.Drawing.Point(10, 290);
             this.btn_confirm.Name = "btn_confirm";
             this.btn_confirm.Size = new System.Drawing.Size(82, 28);
             this.btn_confirm.TabIndex = 66;
@@ -444,19 +494,19 @@ namespace BanjakCarrascalTimingSystemFinal
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 355);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 406);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1049, 232);
-            this.dataGridView1.TabIndex = 73;
+            this.dataGridView1.Size = new System.Drawing.Size(1049, 181);
+            this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(481, 287);
+            this.button1.Location = new System.Drawing.Point(478, 332);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(82, 28);
             this.button1.TabIndex = 75;
@@ -468,7 +518,7 @@ namespace BanjakCarrascalTimingSystemFinal
             // 
             this.button2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(393, 287);
+            this.button2.Location = new System.Drawing.Point(390, 332);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(82, 28);
             this.button2.TabIndex = 74;
@@ -478,7 +528,7 @@ namespace BanjakCarrascalTimingSystemFinal
             // 
             // txt_search2
             // 
-            this.txt_search2.Location = new System.Drawing.Point(15, 295);
+            this.txt_search2.Location = new System.Drawing.Point(12, 340);
             this.txt_search2.Name = "txt_search2";
             this.txt_search2.Size = new System.Drawing.Size(372, 20);
             this.txt_search2.TabIndex = 73;
@@ -487,7 +537,7 @@ namespace BanjakCarrascalTimingSystemFinal
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 276);
+            this.label3.Location = new System.Drawing.Point(9, 321);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(153, 16);
             this.label3.TabIndex = 76;
@@ -498,7 +548,7 @@ namespace BanjakCarrascalTimingSystemFinal
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label11.Location = new System.Drawing.Point(41, 334);
+            this.label11.Location = new System.Drawing.Point(38, 379);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(161, 16);
             this.label11.TabIndex = 77;
@@ -507,7 +557,7 @@ namespace BanjakCarrascalTimingSystemFinal
             // pictureBox1
             // 
             this.pictureBox1.Image = global::BanjakCarrascalTimingSystemFinal.Properties.Resources.icons8_information_48;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 332);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 375);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(20, 20);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -586,6 +636,10 @@ namespace BanjakCarrascalTimingSystemFinal
         private System.Windows.Forms.Label txt_racername;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.MaskedTextBox txttime;
+        private System.Windows.Forms.MaskedTextBox txtoveralltime;
+        private System.Windows.Forms.MaskedTextBox txt_timestart;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.MaskedTextBox txt_finished;
+        private System.Windows.Forms.Label label13;
     }
 }
