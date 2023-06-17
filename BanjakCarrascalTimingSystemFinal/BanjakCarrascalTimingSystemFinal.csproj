@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{887A74FF-4038-460C-A081-CC2A7F55003F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BanjakCarrascalTimingSystemFinal</RootNamespace>
+    <AssemblyName>BanjakCarrascalTimingSystemFinal</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Banjak ICO.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frm_categories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_categories.Designer.cs">
+      <DependentUpon>frm_categories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_eventdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_eventdate.Designer.cs">
+      <DependentUpon>frm_eventdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_menu.Designer.cs">
+      <DependentUpon>frm_menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_nameandevent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_nameandevent.Designer.cs">
+      <DependentUpon>frm_nameandevent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_printpreviewDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_printpreviewDisplay.Designer.cs">
+      <DependentUpon>frm_printpreviewDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_register.Designer.cs">
+      <DependentUpon>frm_register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_reportingtime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_reportingtime.Designer.cs">
+      <DependentUpon>frm_reportingtime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_stages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_stages.Designer.cs">
+      <DependentUpon>frm_stages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_timeadding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_timeadding.Designer.cs">
+      <DependentUpon>frm_timeadding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OverallCrystal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OverallCrystal.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Overallprintpreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Overallprintpreview.Designer.cs">
+      <DependentUpon>Overallprintpreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintDisplayCrystal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintDisplayCrystal.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PrintDisplayDataSet.cs">
+      <DependentUpon>PrintDisplayDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PrintDisplayDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintDisplayDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frm_categories.resx">
+      <DependentUpon>frm_categories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_eventdate.resx">
+      <DependentUpon>frm_eventdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_menu.resx">
+      <DependentUpon>frm_menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_nameandevent.resx">
+      <DependentUpon>frm_nameandevent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_printpreviewDisplay.resx">
+      <DependentUpon>frm_printpreviewDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_register.resx">
+      <DependentUpon>frm_register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_reportingtime.resx">
+      <DependentUpon>frm_reportingtime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_stages.resx">
+      <DependentUpon>frm_stages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_timeadding.resx">
+      <DependentUpon>frm_timeadding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverallCrystal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OverallCrystal.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Overallprintpreview.resx">
+      <DependentUpon>Overallprintpreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintDisplayCrystal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PrintDisplayCrystal.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="PrintDisplayDataSet.xsc">
+      <DependentUpon>PrintDisplayDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PrintDisplayDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PrintDisplayDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="PrintDisplayDataSet.xss">
+      <DependentUpon>PrintDisplayDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Banjak ICO.ico" />
+    <None Include="Resources\icons8-information-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
