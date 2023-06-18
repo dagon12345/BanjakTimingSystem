@@ -76,3 +76,5 @@ C:\Users\LancePC\Documents\GitHub\BanjakTimingSystem\BanjakCarrascalTimingSystem
 C:\Users\LancePC\Documents\GitHub\BanjakTimingSystem\BanjakCarrascalTimingSystemFinal\obj\Debug\BanjakCarrascalTimingSystemFinal.csproj.CopyComplete
 C:\Users\LancePC\Documents\GitHub\BanjakTimingSystem\BanjakCarrascalTimingSystemFinal\obj\Debug\BanjakCarrascalTimingSystemFinal.exe
 C:\Users\LancePC\Documents\GitHub\BanjakTimingSystem\BanjakCarrascalTimingSystemFinal\obj\Debug\BanjakCarrascalTimingSystemFinal.pdb
+C:\Users\LancePC\Documents\GitHub\BanjakTimingSystem\BanjakCarrascalTimingSystemFinal\obj\Debug\BanjakCarrascalTimingSystemFinal.frmLogin.resources
+C:\Users\LancePC\Documents\GitHub\BanjakTimingSystem\BanjakCarrascalTimingSystemFinal\obj\Debug\BanjakCarrascalTimingSystemFinal.frm_logs.resources

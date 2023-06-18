@@ -27,7 +27,25 @@ namespace BanjakCarrascalTimingSystemFinal
             }
             con.Open();
             display();
+            login();
         }
+
+        public void login()
+        {
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT * FROM  login_db";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                lblusertype.Text = dr["Usertype"].ToString();
+                lblusername.Text = dr["Usertype"].ToString();
+            }
+        }
+
 
         public void clear()
         {
@@ -75,6 +93,11 @@ namespace BanjakCarrascalTimingSystemFinal
                     cmd1.CommandText = "insert into stages_db values ('" + txt_stagename.Text + "')";
                     cmd1.ExecuteNonQuery();
 
+                    SqlCommand cmd2 = con.CreateCommand();
+                    cmd2.CommandType = CommandType.Text;
+                    cmd2.CommandText = "insert into ActivityLogs_db values ('" + DateTime.Now.ToString() + "','" + DateTime.Now.ToString("hh:mm:ss tt") + "' ,'" + lblusername.Text + "','" + " ADDED Stage Name into the system with the STAGE NAME " + txt_stagename.Text + "')";
+                    cmd2.ExecuteNonQuery();
+
 
 
                     display();
@@ -108,7 +131,10 @@ namespace BanjakCarrascalTimingSystemFinal
                 cmd.CommandText = "update stage_db set CategoryName = '" + txt_stagename.Text + "' where id='" + i + "'";
                 cmd.ExecuteNonQuery();
 
-
+                SqlCommand cmd2 = con.CreateCommand();
+                cmd2.CommandType = CommandType.Text;
+                cmd2.CommandText = "insert into ActivityLogs_db values ('" + DateTime.Now.ToString() + "','" + DateTime.Now.ToString("hh:mm:ss tt") + "' ,'" + lblusername.Text + "','" + " UPDATED Stage Name into the system with the STAGE NAME " + txt_stagename.Text + "')";
+                cmd2.ExecuteNonQuery();
 
                 display();
                 MessageBox.Show("Successfully Updated");
@@ -135,6 +161,13 @@ namespace BanjakCarrascalTimingSystemFinal
                     SqlCommand cmd = con.CreateCommand();
                     cmd.CommandText = "delete from stages_db where id=" + id + "";
                     cmd.ExecuteNonQuery();
+
+                    SqlCommand cmd2 = con.CreateCommand();
+                    cmd2.CommandType = CommandType.Text;
+                    cmd2.CommandText = "insert into ActivityLogs_db values ('" + DateTime.Now.ToString() + "','" + DateTime.Now.ToString("hh:mm:ss tt") + "' ,'" + lblusername.Text + "','" + " DELETED Stage Name into the system with the STAGE NAME " + txt_stagename.Text + "')";
+                    cmd2.ExecuteNonQuery();
+
+
                     display();
                     MessageBox.Show("Successfully Deleted!");
                     clear();

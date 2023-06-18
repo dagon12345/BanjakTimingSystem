@@ -64,10 +64,16 @@ namespace BanjakCarrascalTimingSystemFinal
             this.lbl_data2 = new System.Windows.Forms.Label();
             this.lbl_data3 = new System.Windows.Forms.Label();
             this.btn_print = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblusername = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblusertype = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel_1.SuspendLayout();
             this.panel_2.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -440,12 +446,53 @@ namespace BanjakCarrascalTimingSystemFinal
             this.btn_print.Text = "Print report";
             this.btn_print.UseVisualStyleBackColor = true;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.lblusername,
+            this.toolStripStatusLabel3,
+            this.lblusertype});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 609);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(940, 22);
+            this.statusStrip1.TabIndex = 58;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(63, 17);
+            this.toolStripStatusLabel1.Text = "Username:";
+            // 
+            // lblusername
+            // 
+            this.lblusername.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblusername.Name = "lblusername";
+            this.lblusername.Size = new System.Drawing.Size(32, 17);
+            this.lblusername.Text = "-----";
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(56, 17);
+            this.toolStripStatusLabel3.Text = "Usertype:";
+            // 
+            // lblusertype
+            // 
+            this.lblusertype.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblusertype.Name = "lblusertype";
+            this.lblusertype.Size = new System.Drawing.Size(32, 17);
+            this.lblusertype.Tag = "";
+            this.lblusertype.Text = "-----";
+            // 
             // frm_nameandevent
             // 
             this.AcceptButton = this.btn_save;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(940, 611);
+            this.ClientSize = new System.Drawing.Size(940, 631);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btn_print);
             this.Controls.Add(this.lbl_data3);
             this.Controls.Add(this.lbl_data2);
@@ -477,6 +524,8 @@ namespace BanjakCarrascalTimingSystemFinal
             this.panel_1.PerformLayout();
             this.panel_2.ResumeLayout(false);
             this.panel_2.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -518,5 +567,10 @@ namespace BanjakCarrascalTimingSystemFinal
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btn_print;
         private System.Windows.Forms.MaskedTextBox txt_timestart;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel lblusername;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
+        private System.Windows.Forms.ToolStripStatusLabel lblusertype;
     }
 }

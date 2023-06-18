@@ -29,25 +29,26 @@ namespace BanjakCarrascalTimingSystemFinal
 
             comboevent();
             combocategory();
-            //display();
             combostage();
+            login();
 
-            /*
-            // Create a DateTimePicker instance
-            var dateTimePicker = new DateTimePicker();
+        }
 
-            // Set the format to include milliseconds
-            dateTimePicker.Format = DateTimePickerFormat.Custom;
-            dateTimePicker.CustomFormat = "hh:mm:ss.fff";
 
-            // Set the desired time with milliseconds
-            DateTime timeWithMilliseconds = new DateTime(2023, 6, 17, 10, 30, 45, 500);
-            dateTimePicker.Value = timeWithMilliseconds;
-           
-
-            // Add the DateTimePicker control to a form or container
-            this.Controls.Add(dateTimePicker);
-             */
+        public void login()
+        {
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT * FROM  login_db";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                lblusertype.Text = dr["Usertype"].ToString();
+                lblusername.Text = dr["Usertype"].ToString();
+            }
         }
 
 

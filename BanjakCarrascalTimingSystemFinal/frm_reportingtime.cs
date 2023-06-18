@@ -32,11 +32,28 @@ namespace BanjakCarrascalTimingSystemFinal
 
             comboevent();
             combocategory();
-            //display();
             combostage();
+            login();
 
 
         }
+
+        public void login()
+        {
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT * FROM  login_db";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                lblusertype.Text = dr["Usertype"].ToString();
+                lblusername.Text = dr["Usertype"].ToString();
+            }
+        }
+
 
         public void combocategory()
         {

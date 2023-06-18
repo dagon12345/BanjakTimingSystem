@@ -57,6 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_categories.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,12 @@
     </Compile>
     <Compile Include="frm_eventdate.Designer.cs">
       <DependentUpon>frm_eventdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_logs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_logs.Designer.cs">
+      <DependentUpon>frm_logs.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_menu.cs">
       <SubType>Form</SubType>
@@ -139,11 +151,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_categories.resx">
       <DependentUpon>frm_categories.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_eventdate.resx">
       <DependentUpon>frm_eventdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_logs.resx">
+      <DependentUpon>frm_logs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_menu.resx">
       <DependentUpon>frm_menu.cs</DependentUpon>

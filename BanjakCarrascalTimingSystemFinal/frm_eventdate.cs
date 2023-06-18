@@ -28,8 +28,26 @@ namespace BanjakCarrascalTimingSystemFinal
             }
             con.Open();
             display();
+            login();
+
 
         }
+        public void login()
+        {
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT * FROM  login_db";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                lblusertype.Text = dr["Usertype"].ToString();
+                lblusername.Text = dr["Usertype"].ToString();
+            }
+        }
+
         public void display()
         {
             SqlCommand cmd = con.CreateCommand();
@@ -81,7 +99,14 @@ namespace BanjakCarrascalTimingSystemFinal
                     cmd1.CommandText = "insert into eventname_db values ('" + txt_eventname.Text + "','" + dt_date.Value.ToString("MM/dd/yyyy") + "')";
                     cmd1.ExecuteNonQuery();
 
-                   
+
+                    SqlCommand cmd2 = con.CreateCommand();
+                    cmd2.CommandType = CommandType.Text;
+                    cmd2.CommandText = "insert into ActivityLogs_db values ('" + DateTime.Now.ToString() + "','" + DateTime.Now.ToString("hh:mm:ss tt") + "' ,'" + lblusername.Text + "','" + " ADDED EVENT NAME into the system with the EVENT NAME " + txt_eventname.Text + " with the DATE " + dt_date.Text + "')";
+                    cmd2.ExecuteNonQuery();
+
+
+
 
                     display();
                     MessageBox.Show(" Event Name Added Successfully!.");
@@ -114,6 +139,15 @@ namespace BanjakCarrascalTimingSystemFinal
 
 
 
+                SqlCommand cmd2 = con.CreateCommand();
+                cmd2.CommandType = CommandType.Text;
+                cmd2.CommandText = "insert into ActivityLogs_db values ('" + DateTime.Now.ToString() + "','" + DateTime.Now.ToString("hh:mm:ss tt") + "' ,'" + lblusername.Text + "','" + " UPDATED EVENT NAME into the system with the EVENT NAME " + txt_eventname.Text + " with the DATE " + dt_date.Text + "')";
+                cmd2.ExecuteNonQuery();
+
+
+
+
+
                 display();
                 MessageBox.Show("Successfully Updated");
                 clear();
@@ -139,6 +173,14 @@ namespace BanjakCarrascalTimingSystemFinal
                     SqlCommand cmd = con.CreateCommand();
                     cmd.CommandText = "delete from EventName_db where id=" + id + "";
                     cmd.ExecuteNonQuery();
+
+                    SqlCommand cmd2 = con.CreateCommand();
+                    cmd2.CommandType = CommandType.Text;
+                    cmd2.CommandText = "insert into ActivityLogs_db values ('" + DateTime.Now.ToString() + "','" + DateTime.Now.ToString("hh:mm:ss tt") + "' ,'" + lblusername.Text + "','" + " DELETED EVENT NAME into the system with the EVENT NAME " + txt_eventname.Text + " with the DATE " + dt_date.Text + "')";
+                    cmd2.ExecuteNonQuery();
+
+
+
                     display();
                     MessageBox.Show("Successfully Deleted!");
                     clear();

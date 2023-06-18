@@ -28,8 +28,23 @@ namespace BanjakCarrascalTimingSystemFinal
             }
             con.Open();
             display();
+            login();
         }
-
+        public void login()
+        {
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT * FROM  login_db";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                lblusertype.Text = dr["Usertype"].ToString();
+                lblusername.Text = dr["Usertype"].ToString();
+            }
+        }
         public void display()
         {
             SqlCommand cmd = con.CreateCommand();
@@ -77,7 +92,14 @@ namespace BanjakCarrascalTimingSystemFinal
                     cmd1.CommandText = "insert into category_db values ('" + txt_catname.Text + "')";
                     cmd1.ExecuteNonQuery();
 
-                  
+
+
+                    SqlCommand cmd2 = con.CreateCommand();
+                    cmd2.CommandType = CommandType.Text;
+                    cmd2.CommandText = "insert into ActivityLogs_db values ('" + DateTime.Now.ToString() + "','" + DateTime.Now.ToString("hh:mm:ss tt") + "' ,'" + lblusername.Text + "','" + " ADDED Category into the system with the CATEGORY NAME " + txt_catname.Text + "')";
+                    cmd2.ExecuteNonQuery();
+
+
 
                     display();
                     MessageBox.Show(" Category Name added Successfully!.");
@@ -112,6 +134,13 @@ namespace BanjakCarrascalTimingSystemFinal
 
 
 
+                SqlCommand cmd2 = con.CreateCommand();
+                cmd2.CommandType = CommandType.Text;
+                cmd2.CommandText = "insert into ActivityLogs_db values ('" + DateTime.Now.ToString() + "','" + DateTime.Now.ToString("hh:mm:ss tt") + "' ,'" + lblusername.Text + "','" + " UPDATED Category into the system with the CATEGORY NAME " + txt_catname.Text + "')";
+                cmd2.ExecuteNonQuery();
+
+
+
                 display();
                 MessageBox.Show("Successfully Updated");
                 clear();
@@ -137,6 +166,14 @@ namespace BanjakCarrascalTimingSystemFinal
                     SqlCommand cmd = con.CreateCommand();
                     cmd.CommandText = "delete from category_db where id=" + id + "";
                     cmd.ExecuteNonQuery();
+
+                    SqlCommand cmd2 = con.CreateCommand();
+                    cmd2.CommandType = CommandType.Text;
+                    cmd2.CommandText = "insert into ActivityLogs_db values ('" + DateTime.Now.ToString() + "','" + DateTime.Now.ToString("hh:mm:ss tt") + "' ,'" + lblusername.Text + "','" + " DELETED Category into the system with the CATEGORY NAME " + txt_catname.Text + "')";
+                    cmd2.ExecuteNonQuery();
+
+
+
                     display();
                     MessageBox.Show("Successfully Deleted!");
                     clear();
