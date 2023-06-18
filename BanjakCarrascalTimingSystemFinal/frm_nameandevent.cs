@@ -214,7 +214,7 @@ namespace BanjakCarrascalTimingSystemFinal
                 int i = 0;
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from racerandevent_db where Name='" + txt_racername.Text + "' OR  RacePlateNo='" + txt_plate.Text + "' AND EventAttended='" + cmb_event.Text +"' and Stage='"+ cmb_stage.Text + "'";
+                cmd.CommandText = "select * from racerandevent_db where Name='" + txt_racername.Text + "' AND  RacePlateNo='" + txt_plate.Text + "' AND EventAttended='" + cmb_event.Text +"' and Stage='"+ cmb_stage.Text + "'";
                 cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -614,6 +614,54 @@ namespace BanjakCarrascalTimingSystemFinal
 
         private void label10_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void txt_racername_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+                //SUGGEST
+                string query = "SELECT Name,RacePlateNo FROM racerandevent_db WHERE Name LIKE @searchTerm";
+                SqlCommand command = new SqlCommand(query, con);
+                command.Parameters.AddWithValue("@searchTerm", txt_racername.Text + "%");
+
+                AutoCompleteStringCollection suggestions = new AutoCompleteStringCollection();
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        suggestions.Add(reader.GetString(0));
+                    }
+                }
+
+                txt_racername.AutoCompleteCustomSource = suggestions;
+
+
+
+
+                SqlCommand cmd1 = con.CreateCommand();
+                cmd1.CommandType = CommandType.Text;
+                cmd1.CommandText = "SELECT Name,RacePlateNo FROM racerandevent_db WHERE Name='" + txt_racername.Text + "'";
+                cmd1.ExecuteNonQuery();
+                DataTable dt1 = new DataTable();
+                SqlDataAdapter da1 = new SqlDataAdapter(cmd1);
+                da1.Fill(dt1);
+                foreach (DataRow dr in dt1.Rows)
+                {
+                    txt_plate.Text = dr["RacePlateNo"].ToString();
+                    txt_timestart.Focus();
+                }
+            }
+            catch(Exception)
+            {
+
+            }
+
+
+
 
         }
     }

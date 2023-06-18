@@ -334,6 +334,28 @@ namespace BanjakCarrascalTimingSystemFinal
                     txt_racername.Text = dr["Name"].ToString();
                     txt_plate.Text = dr["RacePlateNo"].ToString();
                     txt_timestart.Text = dr["TimeStart"].ToString();
+                    txt_finished.Text = dr["TimeStart"].ToString();
+
+
+                    string timeString1 = txt_timestart.Text;
+                    string timeString2 = txt_finished.Text;
+
+                    TimeSpan timeSpan1, timeSpan2;
+
+                    // Parse the input time values with milliseconds
+                    if (TimeSpan.TryParseExact(timeString1, @"hh\:mm\:ss\.fff", CultureInfo.InvariantCulture, out timeSpan1) &&
+                        TimeSpan.TryParseExact(timeString2, @"hh\:mm\:ss\.fff", CultureInfo.InvariantCulture, out timeSpan2))
+                    {
+                        // Perform the addition
+                        TimeSpan sum = timeSpan1 - timeSpan2;
+
+                        // Display the result with the desired precision
+                        string sumString = sum.ToString(@"hh\:mm\:ss\.fff");
+                        txtoveralltime.Text = sum.ToString();
+                    }
+
+
+
                     txt_finished.Focus();
                 }
 
@@ -680,6 +702,11 @@ namespace BanjakCarrascalTimingSystemFinal
                 txtoveralltime.Text = sum.ToString();
             }
 
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -174,10 +174,13 @@ namespace BanjakCarrascalTimingSystemFinal
             // 
             // txt_racername
             // 
+            this.txt_racername.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txt_racername.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txt_racername.Location = new System.Drawing.Point(16, 34);
             this.txt_racername.Name = "txt_racername";
             this.txt_racername.Size = new System.Drawing.Size(329, 20);
             this.txt_racername.TabIndex = 0;
+            this.txt_racername.TextChanged += new System.EventHandler(this.txt_racername_TextChanged);
             // 
             // label1
             // 
