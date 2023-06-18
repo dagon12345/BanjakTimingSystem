@@ -253,10 +253,11 @@ namespace BanjakCarrascalTimingSystemFinal
             // 
             // txt_finished
             // 
+            this.txt_finished.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_finished.Location = new System.Drawing.Point(17, 172);
             this.txt_finished.Mask = "00:00:00.000";
             this.txt_finished.Name = "txt_finished";
-            this.txt_finished.Size = new System.Drawing.Size(216, 20);
+            this.txt_finished.Size = new System.Drawing.Size(278, 27);
             this.txt_finished.TabIndex = 1;
             this.txt_finished.ValidatingType = typeof(System.DateTime);
             this.txt_finished.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txt_finished_MaskInputRejected);
@@ -274,11 +275,12 @@ namespace BanjakCarrascalTimingSystemFinal
             // 
             // txt_timestart
             // 
+            this.txt_timestart.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_timestart.Location = new System.Drawing.Point(17, 130);
             this.txt_timestart.Mask = "00:00:00.000";
             this.txt_timestart.Name = "txt_timestart";
             this.txt_timestart.ReadOnly = true;
-            this.txt_timestart.Size = new System.Drawing.Size(216, 20);
+            this.txt_timestart.Size = new System.Drawing.Size(278, 27);
             this.txt_timestart.TabIndex = 0;
             this.txt_timestart.ValidatingType = typeof(System.DateTime);
             // 
@@ -294,23 +296,24 @@ namespace BanjakCarrascalTimingSystemFinal
             // 
             // txtoveralltime
             // 
+            this.txtoveralltime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtoveralltime.Location = new System.Drawing.Point(17, 217);
             this.txtoveralltime.Mask = "00:00:00.000";
             this.txtoveralltime.Name = "txtoveralltime";
             this.txtoveralltime.ReadOnly = true;
-            this.txtoveralltime.Size = new System.Drawing.Size(216, 20);
+            this.txtoveralltime.Size = new System.Drawing.Size(278, 27);
             this.txtoveralltime.TabIndex = 87;
             this.txtoveralltime.ValidatingType = typeof(System.DateTime);
             // 
             // lbl_data3
             // 
             this.lbl_data3.AutoSize = true;
-            this.lbl_data3.BackColor = System.Drawing.Color.Black;
-            this.lbl_data3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_data3.BackColor = System.Drawing.Color.SeaGreen;
+            this.lbl_data3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_data3.ForeColor = System.Drawing.Color.White;
-            this.lbl_data3.Location = new System.Drawing.Point(331, 245);
+            this.lbl_data3.Location = new System.Drawing.Point(331, 276);
             this.lbl_data3.Name = "lbl_data3";
-            this.lbl_data3.Size = new System.Drawing.Size(58, 16);
+            this.lbl_data3.Size = new System.Drawing.Size(102, 25);
             this.lbl_data3.TabIndex = 84;
             this.lbl_data3.Text = "----------";
             this.lbl_data3.Click += new System.EventHandler(this.lbl_data3_Click);
@@ -330,12 +333,12 @@ namespace BanjakCarrascalTimingSystemFinal
             // lbl_data2
             // 
             this.lbl_data2.AutoSize = true;
-            this.lbl_data2.BackColor = System.Drawing.Color.Black;
-            this.lbl_data2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_data2.BackColor = System.Drawing.Color.SeaGreen;
+            this.lbl_data2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_data2.ForeColor = System.Drawing.Color.White;
-            this.lbl_data2.Location = new System.Drawing.Point(331, 219);
+            this.lbl_data2.Location = new System.Drawing.Point(331, 237);
             this.lbl_data2.Name = "lbl_data2";
-            this.lbl_data2.Size = new System.Drawing.Size(58, 16);
+            this.lbl_data2.Size = new System.Drawing.Size(102, 25);
             this.lbl_data2.TabIndex = 83;
             this.lbl_data2.Text = "----------";
             this.lbl_data2.Click += new System.EventHandler(this.lbl_data2_Click);
@@ -355,10 +358,10 @@ namespace BanjakCarrascalTimingSystemFinal
             // lbl_data
             // 
             this.lbl_data.AutoSize = true;
-            this.lbl_data.BackColor = System.Drawing.Color.Black;
+            this.lbl_data.BackColor = System.Drawing.Color.SeaGreen;
             this.lbl_data.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_data.ForeColor = System.Drawing.Color.White;
-            this.lbl_data.Location = new System.Drawing.Point(331, 195);
+            this.lbl_data.Location = new System.Drawing.Point(331, 201);
             this.lbl_data.Name = "lbl_data";
             this.lbl_data.Size = new System.Drawing.Size(58, 16);
             this.lbl_data.TabIndex = 81;

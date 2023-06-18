@@ -180,6 +180,7 @@ namespace BanjakCarrascalTimingSystemFinal
             lbl_data3.Text = "----------";
             dataGridView2.DataSource = null;
             dataGridView1.DataSource = null;
+            clear();
             cmb_stage.Focus();
         }
         public void clear()
@@ -191,6 +192,8 @@ namespace BanjakCarrascalTimingSystemFinal
             txtoveralltime.ResetText();
             txt_finished.ResetText();
             txt_timestart.ResetText();
+            btn_update.Enabled = true;
+            btn_delete.Enabled = true;
 
             txt_racername.Focus();
         }
@@ -359,6 +362,9 @@ namespace BanjakCarrascalTimingSystemFinal
                     txt_finished.Focus();
                 }
 
+                btn_update.Enabled = false;
+
+                btn_delete.Enabled = false;
 
             }
             catch (Exception ex)
@@ -550,7 +556,7 @@ namespace BanjakCarrascalTimingSystemFinal
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            if (txt_racername.Text == "")
+            if (txt_plate.Text == "----------")
             {
                 MessageBox.Show("Select what data you want to delete.");
             }
@@ -561,10 +567,10 @@ namespace BanjakCarrascalTimingSystemFinal
                 try
                 {
 
-                    int id;
-                    id = Convert.ToInt32(dataGridView1.SelectedCells[0].Value.ToString());
+                    //int id;
+                   // id = Convert.ToInt32(dataGridView1.SelectedCells[0].Value.ToString());
                     SqlCommand cmd = con.CreateCommand();
-                    cmd.CommandText = "delete from timeadd_db where id=" + id + "";
+                    cmd.CommandText = "delete from timeadd_db WHERE RacePlateNo=" + txt_plate.Text + "";
                     cmd.ExecuteNonQuery();
                     timeadddisplay();
                     MessageBox.Show("Successfully Deleted!");
@@ -604,6 +610,10 @@ namespace BanjakCarrascalTimingSystemFinal
                     txtoveralltime.Text = dr["Time"].ToString();
 
                     txt_finished.Focus();
+
+                    btn_update.Enabled = true;
+                    btn_delete.Enabled = true;
+
 
                 }
 
