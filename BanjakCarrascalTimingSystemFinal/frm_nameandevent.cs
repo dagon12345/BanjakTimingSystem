@@ -242,6 +242,14 @@ namespace BanjakCarrascalTimingSystemFinal
                             cmd2.CommandText = "insert into racerandevent_db values ('" + txt_racername.Text + "','" + txt_plate.Text + "','" + cmb_event.Text + "','" + txt_date.Text + "','" + cmb_stage.Text + "','" + cmb_category.Text + "','" + txt_timestart.Text + "')";
                             cmd2.ExecuteNonQuery();
 
+                            
+
+                            SqlCommand cmd3 = con.CreateCommand();
+                            cmd3.CommandType = CommandType.Text; 
+                            cmd3.CommandText = "insert into ActivityLogs_db values ('" + DateTime.Now.ToString() + "','" + DateTime.Now.ToString("hh:mm:ss tt") + "' ,'" + lblusername.Text + "','" + " added data into the system with the name " + txt_racername.Text + " and raceplate number " + txt_plate.Text + " with the time start " + txt_timestart.Text + " to the system. Event Name: "+ cmb_event.Text +  " Stage: " + cmb_stage.Text  + " and Category: " + cmb_category.Text + "')";
+                            cmd3.ExecuteNonQuery();
+                            
+
 
 
                             display();
@@ -288,17 +296,20 @@ namespace BanjakCarrascalTimingSystemFinal
             {
 
 
-                        int j = Convert.ToInt32(dataGridView1.SelectedCells[0].Value.ToString());
-                        SqlCommand cmd0 = con.CreateCommand();
-                        cmd0.CommandType = CommandType.Text;
-                        cmd0.CommandText = "update racerandevent_db set Name = '" + txt_racername.Text + "', RacePlateNo = '" + txt_plate.Text + "' ,EventAttended = '" + cmb_event.Text + "',Date = '" + txt_date.Text + "',Stage = '" + cmb_stage.Text + "',Category = '" + cmb_category.Text + "',TimeStart = '" + txt_timestart.Text + "' where id='" + j + "'";
-                        cmd0.ExecuteNonQuery();
+                    int j = Convert.ToInt32(dataGridView1.SelectedCells[0].Value.ToString());
+                    SqlCommand cmd0 = con.CreateCommand();
+                    cmd0.CommandType = CommandType.Text;
+                    cmd0.CommandText = "update racerandevent_db set Name = '" + txt_racername.Text + "', RacePlateNo = '" + txt_plate.Text + "' ,EventAttended = '" + cmb_event.Text + "',Date = '" + txt_date.Text + "',Stage = '" + cmb_stage.Text + "',Category = '" + cmb_category.Text + "',TimeStart = '" + txt_timestart.Text + "' where id='" + j + "'";
+                    cmd0.ExecuteNonQuery();
 
+                    SqlCommand cmd3 = con.CreateCommand();
+                    cmd3.CommandType = CommandType.Text;
+                    cmd3.CommandText = "insert into ActivityLogs_db values ('" + DateTime.Now.ToString() + "','" + DateTime.Now.ToString("hh:mm:ss tt") + "' ,'" + lblusername.Text + "','" + " updated data into the system with the name " + txt_racername.Text + " and raceplate number " + txt_plate.Text + " with the time start " + txt_timestart.Text + " to the system. Event Name: " + cmb_event.Text + " Stage: " + cmb_stage.Text + " and Category: " + cmb_category.Text + "')";
+                    cmd3.ExecuteNonQuery();
 
-
-                        display();
-                        MessageBox.Show("Successfully Updated");
-                        clear();
+                    display();
+                    MessageBox.Show("Successfully Updated");
+                    clear();
                 
 
             }
@@ -329,7 +340,10 @@ namespace BanjakCarrascalTimingSystemFinal
                     cmd.ExecuteNonQuery();
 
 
-                    
+                    SqlCommand cmd3 = con.CreateCommand();
+                    cmd3.CommandType = CommandType.Text;
+                    cmd3.CommandText = "insert into ActivityLogs_db values ('" + DateTime.Now.ToString() + "','" + DateTime.Now.ToString("hh:mm:ss tt") + "' ,'" + lblusername.Text + "','" + " deleted data into the system with the name " + txt_racername.Text + " and raceplate number " + txt_plate.Text + " with the time start " + txt_timestart.Text + " to the system. Event Name: " + cmb_event.Text + " Stage: " + cmb_stage.Text + " and Category: " + cmb_category.Text + "')";
+                    cmd3.ExecuteNonQuery();
 
                     display();
                     MessageBox.Show("Successfully Deleted!");

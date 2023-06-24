@@ -97,6 +97,12 @@ namespace BanjakCarrascalTimingSystemFinal
         {
              if (MessageBox.Show("Are you sure you want to logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                SqlCommand cmd3 = con.CreateCommand();
+                cmd3.CommandType = CommandType.Text;
+                cmd3.CommandText = "insert into ActivityLogs_db values ('" + DateTime.Now.ToString() + "','" + DateTime.Now.ToString("hh:mm:ss tt") + "' ,'" + lblusername.Text + "','" + " has logged out into the system. " + "')";
+                cmd3.ExecuteNonQuery();
+
+
                 this.Hide();
                 frmLogin fl = new frmLogin();
                 fl.Show();

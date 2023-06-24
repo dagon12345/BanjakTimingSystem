@@ -308,7 +308,10 @@ namespace BanjakCarrascalTimingSystemFinal
                         cmd1.ExecuteNonQuery();
 
 
-                        
+                        SqlCommand cmd3 = con.CreateCommand();
+                        cmd3.CommandType = CommandType.Text;
+                        cmd3.CommandText = "insert into ActivityLogs_db values ('" + DateTime.Now.ToString() + "','" + DateTime.Now.ToString("hh:mm:ss tt") + "' ,'" + lblusername.Text + "','" + " added data into the system with the name " + txt_racername.Text + " and raceplate number " + txt_plate.Text + " with the time start " + txt_timestart.Text +  " and end time of "  + txt_finished.Text  +  " with the total overall time of " + txtoveralltime.Text +" to the system. Event Name: " + cmb_event.Text + " Stage: " + cmb_stage.Text + " and Category: " + cmb_category.Text + "')";
+                        cmd3.ExecuteNonQuery();
 
 
                         timeadddisplay();
@@ -588,6 +591,13 @@ namespace BanjakCarrascalTimingSystemFinal
                     SqlCommand cmd = con.CreateCommand();
                     cmd.CommandText = "delete from timeadd_db WHERE RacePlateNo=" + txt_plate.Text + "";
                     cmd.ExecuteNonQuery();
+
+                    SqlCommand cmd3 = con.CreateCommand();
+                    cmd3.CommandType = CommandType.Text;
+                    cmd3.CommandText = "insert into ActivityLogs_db values ('" + DateTime.Now.ToString() + "','" + DateTime.Now.ToString("hh:mm:ss tt") + "' ,'" + lblusername.Text + "','" + " deleted data into the system with the name " + txt_racername.Text + " and raceplate number " + txt_plate.Text + " with the time start " + txt_timestart.Text + " and end time of " + txt_finished.Text + " with the total overall time of " + txtoveralltime.Text + " to the system. Event Name: " + cmb_event.Text + " Stage: " + cmb_stage.Text + " and Category: " + cmb_category.Text + "')";
+                    cmd3.ExecuteNonQuery();
+
+
                     timeadddisplay();
                     MessageBox.Show("Successfully Deleted!");
                     clear();
@@ -670,7 +680,10 @@ namespace BanjakCarrascalTimingSystemFinal
                 cmd.CommandText = "update timeadd_db set TimeFinished='"+ txt_finished.Text +"', Time='"+ txtoveralltime.Text +"' WHERE id='" + i + "'";
                 cmd.ExecuteNonQuery();
 
-
+                SqlCommand cmd3 = con.CreateCommand();
+                cmd3.CommandType = CommandType.Text;
+                cmd3.CommandText = "insert into ActivityLogs_db values ('" + DateTime.Now.ToString() + "','" + DateTime.Now.ToString("hh:mm:ss tt") + "' ,'" + lblusername.Text + "','" + " updated data into the system with the name " + txt_racername.Text + " and raceplate number " + txt_plate.Text + " with the time start " + txt_timestart.Text + " and end time of " + txt_finished.Text + " with the total overall time of " + txtoveralltime.Text + " to the system. Event Name: " + cmb_event.Text + " Stage: " + cmb_stage.Text + " and Category: " + cmb_category.Text + "')";
+                cmd3.ExecuteNonQuery();
 
                 timeadddisplay();
                 MessageBox.Show("Successfully Updated");
